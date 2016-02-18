@@ -23,8 +23,8 @@ document.querySelector("#color-circle button").addEventListener('click', functio
 
 var circle = document.querySelector(".circle-red");
 var circle_computed_style = window.getComputedStyle(circle)
-var original_Width = parseInt(circle_computed_style.width, 10)
-var original_Height = parseInt(circle_computed_style.height, 10)
+// var original_Width = parseInt(circle_computed_style.width, 10)
+// var original_Height = parseInt(circle_computed_style.height, 10)
 
 document.querySelector("#blow-up button").addEventListener('click', function() {
 	
@@ -115,12 +115,6 @@ document.querySelector("#pig-latin button").addEventListener('click', function()
 document.querySelector("#cycle-image button").addEventListener('click', function() {
 
 
-
-var alpha = 3
-
-alpha.iterator
-
-
 var img_City = document.querySelector("#city-img.exerciseItem")
 
 var imgArray = img_City.src.split("/")
@@ -128,6 +122,9 @@ var imgArray = img_City.src.split("/")
 var numString = imgArray.pop()
 console.log(numString)
 var newNum = parseInt(numString) + 1
+    if (newNum >= 11) {
+        newNum = 1
+    }
 imgArray.push(newNum)
 var newImgUrl = imgArray.join('/')
 
